@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modul Pembelajaran Sosiologi Kelas X</title>
+    <title>Modul Sosiologi Kelas X</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #4361ee;
@@ -14,13 +14,9 @@
             --light: #f8f9fa;
             --dark: #212529;
             --success: #4cc9f0;
-            --warning: #fca311;
             --gradient: linear-gradient(135deg, var(--primary), var(--accent));
-            --gradient-2: linear-gradient(135deg, #ff6b6b, #ff8e53);
-            --gradient-3: linear-gradient(135deg, #48c6ef, #6f86d6);
-            --gradient-4: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            --card-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            --card-shadow-hover: 0 15px 30px rgba(0,0,0,0.15);
+            --card-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            --card-shadow-hover: 0 12px 24px rgba(0,0,0,0.12);
         }
 
         * {
@@ -44,7 +40,7 @@
             padding: 0 15px;
         }
 
-        /* Header */
+        /* Header Responsive */
         header {
             background: var(--gradient);
             color: white;
@@ -59,45 +55,50 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .logo i {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .logo h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 4px;
+            font-size: 0.95rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
         }
 
         .nav-links a:hover {
             background: rgba(255,255,255,0.2);
         }
 
-        /* Hero Section */
+        /* Hero Section (Mobile-Optimized) */
         .hero {
-            padding: 6rem 0;
+            padding: 5rem 1rem;
             background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
             position: relative;
             color: white;
@@ -119,18 +120,19 @@
             z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .hero h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3.2rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
             opacity: 0.95;
         }
 
@@ -140,22 +142,23 @@
             gap: 10px;
             background: white;
             color: var(--primary);
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.05rem;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
 
         .hero-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         /* Search Section */
         .search-section {
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
@@ -168,34 +171,31 @@
 
         .search-box input {
             width: 100%;
-            padding: 14px 20px;
+            padding: 14px 18px;
             border: 2px solid #ddd;
             border-radius: 50px;
             font-size: 1rem;
             outline: none;
-        }
-
-        .search-box input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+            font-family: inherit;
         }
 
         .search-box button {
             position: absolute;
-            right: 10px;
+            right: 8px;
             top: 50%;
             transform: translateY(-50%);
             background: var(--primary);
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 30px;
             cursor: pointer;
+            font-size: 1rem;
         }
 
         /* Info Section */
         .info-section {
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             background: var(--gradient);
             color: white;
             text-align: center;
@@ -205,7 +205,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
@@ -214,38 +214,39 @@
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
-            min-width: 180px;
+            min-width: 140px;
         }
 
         .info-item i {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .info-item h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .info-item p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
         }
 
         /* Modules Section */
         .modules {
-            padding: 5rem 0;
+            padding: 3rem 0;
             background: #f8fdff;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-title h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             position: relative;
             display: inline-block;
         }
@@ -253,30 +254,42 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: var(--accent);
             border-radius: 2px;
         }
 
         .section-title p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #555;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 576px) {
+            .modules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .modules-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .module-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -290,12 +303,12 @@
         }
 
         .module-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-8px);
             box-shadow: var(--card-shadow-hover);
         }
 
         .card-img {
-            height: 180px;
+            height: 160px;
             overflow: hidden;
         }
 
@@ -307,25 +320,25 @@
         }
 
         .module-card:hover .card-img img {
-            transform: scale(1.12);
+            transform: scale(1.08);
         }
 
         .card-content {
-            padding: 1.6rem;
+            padding: 1.2rem;
         }
 
         .card-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
             color: var(--secondary);
             font-weight: 600;
         }
 
         .card-stats {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
         }
 
@@ -337,14 +350,14 @@
 
         .card-content p {
             color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
         .btn-group {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .btn {
@@ -352,12 +365,12 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 10px 15px;
-            border-radius: 30px;
+            gap: 6px;
+            padding: 10px 12px;
+            border-radius: 28px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
@@ -371,8 +384,8 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(67, 97, 238, 0.4);
         }
 
         .btn-pdf {
@@ -383,50 +396,45 @@
 
         .btn-pdf:hover {
             background: #e6e6e6;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         /* About Section */
         .about {
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-            background: #fff;
+            padding: 3rem 0;
         }
 
         .about-content {
             display: flex;
-            gap: 3rem;
-            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .about-text {
-            flex: 1;
-            padding: 2.2rem;
-            border-radius: 16px;
+            padding: 1.6rem;
+            border-radius: 14px;
             background: #f0f7ff;
             border: 1px solid #e0e8f5;
         }
 
         .about-text h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .about-text p {
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
             line-height: 1.7;
         }
 
         .about-image {
-            flex: 1;
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            height: 400px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            height: 280px;
         }
 
         .about-image img {
@@ -439,19 +447,24 @@
         footer {
             background: var(--dark);
             color: white;
-            padding: 3.5rem 0 1.8rem;
+            padding: 2.5rem 0 1.5rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .footer-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.3rem;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
             position: relative;
             padding-bottom: 0.5rem;
         }
@@ -461,7 +474,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 55px;
+            width: 50px;
             height: 3px;
             background: var(--accent);
         }
@@ -471,7 +484,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.7rem;
         }
 
         .footer-links a {
@@ -480,84 +493,79 @@
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
+            gap: 8px;
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
             color: var(--accent);
-            transform: translateX(6px);
+            transform: translateX(4px);
         }
 
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 42px;
-            height: 42px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: rgba(255,255,255,0.1);
             color: white;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             background: var(--accent);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 1.8rem;
+            padding-top: 1.2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #aaa;
         }
 
-        /* Back to Home */
+        /* Back to Home Button (Mobile Friendly) */
         .back-home {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: var(--gradient);
             color: white;
-            padding: 14px 28px;
+            padding: 12px 22px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             z-index: 99;
-            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+            box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
         }
 
         .back-home:hover {
-            transform: translateY(-4px) scale(1.08);
+            transform: translateY(-3px) scale(1.05);
         }
 
         /* Animation */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .animate {
-            animation: fadeIn 0.8s ease-out forwards;
+            animation: fadeIn 0.7s ease-out forwards;
         }
 
         .delay-1 { animation-delay: 0.1s; }
@@ -567,13 +575,17 @@
         .delay-5 { animation-delay: 0.5s; }
         .delay-6 { animation-delay: 0.6s; }
 
-        @media (max-width: 768px) {
-            .info-container {
-                flex-direction: column;
-            }
-            .btn-group {
-                flex-direction: column;
-            }
+        /* Tablet & Large Phone Optimized */
+        @media (min-width: 768px) {
+            .hero h2 { font-size: 2.8rem; }
+            .hero p { font-size: 1.2rem; }
+            .hero-btn { font-size: 1.1rem; padding: 14px 32px; }
+            .section-title h2 { font-size: 2.2rem; }
+            .info-item h3 { font-size: 1.3rem; }
+            .info-item p { font-size: 1.1rem; }
+            .card-content h3 { font-size: 1.3rem; }
+            .btn { font-size: 0.95rem; }
+            .back-home { font-size: 1rem; padding: 14px 28px; }
         }
     </style>
 </head>
@@ -583,7 +595,7 @@
         <div class="container header-content">
             <div class="logo">
                 <i class="fas fa-book-open"></i>
-                <h1>Sosiologi Kelas X</h1>
+                <h1>Sosiologi X</h1>
             </div>
             <nav class="nav-links">
                 <a href="#"><i class="fas fa-home"></i> Beranda</a>
@@ -597,8 +609,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container hero-content">
-            <h2>Modul Pembelajaran Sosiologi Kelas X</h2>
-            <p>Belajar sosiologi secara sistematis, kontekstual, dan bermakna. Mulai dari dasar ilmu hingga keterampilan penelitian sosial.</p>
+            <h2>Modul Sosiologi Kelas X</h2>
+            <p>Belajar sosiologi secara sistematis, kontekstual, dan bermakna — dari dasar hingga penelitian.</p>
             <a href="#modules" class="hero-btn"><i class="fas fa-book-reader"></i> Jelajahi Modul</a>
         </div>
     </section>
@@ -607,7 +619,7 @@
     <section class="search-section">
         <div class="container">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Cari modul... contoh: konflik, penelitian">
+                <input type="text" id="searchInput" placeholder="Cari modul... (contoh: konflik, penelitian)">
                 <button onclick="searchModules()"><i class="fas fa-search"></i></button>
             </div>
         </div>
@@ -619,17 +631,17 @@
             <div class="info-item">
                 <i class="fas fa-clock"></i>
                 <h3>Jam Operasional</h3>
-                <p>Senin - Jumat, 06.45 - 15.30</p>
+                <p>06.45 - 15.30</p>
             </div>
             <div class="info-item">
                 <i class="fas fa-users"></i>
-                <h3>Pengunjung Hari Ini</h3>
+                <h3>Pengunjung</h3>
                 <p id="visitorCounter">Memuat...</p>
             </div>
             <div class="info-item">
                 <i class="fas fa-map-marker-alt"></i>
                 <h3>Lokasi</h3>
-                <p>Benculuk, Cluring, Banyuwangi</p>
+                <p>Banyuwangi</p>
             </div>
         </div>
     </section>
@@ -638,11 +650,10 @@
     <section id="modules" class="modules">
         <div class="container">
             <div class="section-title">
-                <h2>Daftar Modul Pembelajaran</h2>
-                <p>Urutan pembelajaran dirancang progresif: dari dasar → aplikasi → keterampilan</p>
+                <h2>Daftar Modul</h2>
+                <p>Urutan progresif: dari dasar → aplikasi → keterampilan</p>
             </div>
             <div class="modules-grid" id="modulesGrid">
-                
                 <!-- Modul 1-4 -->
                 <div class="module-card animate delay-1" data-title="Pengantar Sosiologi">
                     <div class="card-img">
@@ -654,10 +665,10 @@
                             <div><i class="fas fa-users"></i> 1.248</div>
                             <div><i class="fas fa-file-pdf"></i> PDF</div>
                         </div>
-                        <p>Ruang lingkup, objek kajian, sejarah perkembangan, dan teori fungsionalisme struktural. Menjadi dasar pemahaman sosiologi dan pembentukan wawasan sosial berbasis Pancasila.</p>
+                        <p>Ruang lingkup, objek kajian, sejarah perkembangan, dan teori fungsionalisme struktural.</p>
                         <div class="btn-group">
-                            <a href="Modulajar_1-4_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka Modul</a>
-                            <a href="pdf/Modul_1-4_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> Unduh</a>
+                            <a href="Modulajar_1-4_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka</a>
+                            <a href="pdf/Modul_1-4_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> PDF</a>
                         </div>
                     </div>
                 </div>
@@ -673,10 +684,10 @@
                             <div><i class="fas fa-users"></i> 983</div>
                             <div><i class="fas fa-file-pdf"></i> PDF</div>
                         </div>
-                        <p>Teori interaksionisme simbolik, paradigma ganda, dan makna simbol dalam kehidupan sehari-hari. Membangun pemahaman tentang keberagaman dan sikap inklusif.</p>
+                        <p>Teori interaksionisme simbolik, paradigma ganda, dan makna simbol dalam kehidupan sehari-hari.</p>
                         <div class="btn-group">
-                            <a href="Modulajar_5-8_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka Modul</a>
-                            <a href="pdf/Modul_5-8_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> Unduh</a>
+                            <a href="Modulajar_5-8_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka</a>
+                            <a href="pdf/Modul_5-8_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> PDF</a>
                         </div>
                     </div>
                 </div>
@@ -692,10 +703,10 @@
                             <div><i class="fas fa-users"></i> 1.520</div>
                             <div><i class="fas fa-file-pdf"></i> PDF</div>
                         </div>
-                        <p>Teori konflik, penyebab, dampak, dan resolusi konflik sosial. Menggunakan studi kasus lokal untuk melatih empati, analisis kritis, dan budaya damai.</p>
+                        <p>Teori konflik, penyebab, dampak, dan resolusi konflik sosial. Studi kasus lokal.</p>
                         <div class="btn-group">
-                            <a href="Modulajar_9-12_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka Modul</a>
-                            <a href="pdf/Modul_9-12_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> Unduh</a>
+                            <a href="Modulajar_9-12_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka</a>
+                            <a href="pdf/Modul_9-12_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> PDF</a>
                         </div>
                     </div>
                 </div>
@@ -711,10 +722,10 @@
                             <div><i class="fas fa-users"></i> 892</div>
                             <div><i class="fas fa-file-pdf"></i> PDF</div>
                         </div>
-                        <p>Menganalisis sifat sosiologi sebagai ilmu, paradigma teoritis, dan penerapannya dalam fenomena sosial melalui pendekatan teoritis dan aplikatif.</p>
+                        <p>Sifat ilmu, paradigma, dan penerapan dalam fenomena sosial.</p>
                         <div class="btn-group">
-                            <a href="Modulajar_13-14_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka Modul</a>
-                            <a href="pdf/Modul_13-14_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> Unduh</a>
+                            <a href="Modulajar_13-14_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka</a>
+                            <a href="pdf/Modul_13-14_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> PDF</a>
                         </div>
                     </div>
                 </div>
@@ -730,10 +741,10 @@
                             <div><i class="fas fa-users"></i> 1.105</div>
                             <div><i class="fas fa-file-pdf"></i> PDF</div>
                         </div>
-                        <p>Faktor pendorong, bentuk, dan dampak perubahan sosial. Materi relevan dengan kehidupan sehari-hari, dikembangkan melalui observasi dan simulasi.</p>
+                        <p>Faktor pendorong, bentuk, dan dampak perubahan sosial.</p>
                         <div class="btn-group">
-                            <a href="Modulajar_15-16_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka Modul</a>
-                            <a href="pdf/Modul_15-16_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> Unduh</a>
+                            <a href="Modulajar_15-16_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka</a>
+                            <a href="pdf/Modul_15-16_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> PDF</a>
                         </div>
                     </div>
                 </div>
@@ -744,15 +755,15 @@
                         <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Metode Penelitian">
                     </div>
                     <div class="card-content">
-                        <h3>Modul 17-19: Metode Penelitian Sosial</h3>
+                        <h3>Modul 17-19: Metode Penelitian</h3>
                         <div class="card-stats">
                             <div><i class="fas fa-users"></i> 1.870</div>
                             <div><i class="fas fa-file-pdf"></i> PDF</div>
                         </div>
-                        <p>Memahami metode kuantitatif, kualitatif, dan campuran; menyusun instrumen; melakukan observasi; serta menyusun laporan penelitian sederhana.</p>
+                        <p>Memahami metode kuantitatif, kualitatif, dan menyusun laporan.</p>
                         <div class="btn-group">
-                            <a href="Modulajar_17-19_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka Modul</a>
-                            <a href="pdf/Modul_17-19_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> Unduh</a>
+                            <a href="Modulajar_17-19_kelas_X_sosiologi.html" class="btn btn-primary"><i class="fas fa-book"></i> Buka</a>
+                            <a href="pdf/Modul_17-19_Sosiologi.pdf" class="btn btn-pdf" download><i class="fas fa-download"></i> PDF</a>
                         </div>
                     </div>
                 </div>
@@ -765,13 +776,12 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Tentang Platform Pembelajaran</h2>
-                    <p>Platform ini dirancang untuk membantu siswa kelas X memahami sosiologi secara sistematis, kontekstual, dan bermakna. Setiap modul dikembangkan berdasarkan kurikulum dan prinsip pedagogis yang kuat.</p>
-                    <p>Pendekatan pembelajaran menggabungkan teori, studi kasus lokal, aktivitas observasi, diskusi, dan proyek sederhana untuk membangun pemahaman yang mendalam dan sikap sosial yang positif.</p>
-                    <p>Kami percaya bahwa sosiologi bukan hanya ilmu, tapi alat untuk membangun masyarakat yang lebih adil, toleran, dan beretika.</p>
+                    <h2>Tentang Kami</h2>
+                    <p>Platform ini dirancang untuk membantu siswa memahami sosiologi secara kontekstual dan bermakna, sesuai nilai Pancasila.</p>
+                    <p>Setiap modul dikembangkan dengan pendekatan aktif, reflektif, dan berbasis proyek untuk membangun wawasan sosial.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Siswa sedang belajar sosiologi">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Belajar sosiologi">
                 </div>
             </div>
         </div>
@@ -783,8 +793,8 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Tentang Kami</h3>
-                    <p class="visitor-counter">Pengunjung Online: <span id="onlineCount">0</span></p>
-                    <p>Platform pembelajaran sosiologi kelas X yang menyediakan modul berkualitas untuk membentuk wawasan sosial berbasis Pancasila.</p>
+                    <p class="visitor-counter">Online: <span id="onlineCount">0</span></p>
+                    <p>Modul sosiologi berkualitas untuk siswa kelas X.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -796,49 +806,46 @@
                     <h3>Link Cepat</h3>
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Beranda</a></li>
-                        <li><a href="#modules"><i class="fas fa-chevron-right"></i> Modul Pembelajaran</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Tentang Program</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Kontak Kami</a></li>
+                        <li><a href="#modules"><i class="fas fa-chevron-right"></i> Modul</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Tentang</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Kontak</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Benculuk, Cluring, Banyuwangi</a></li>
-                        <li><a href="mailto:info@sosiologi-kelasx.com"><i class="fas fa-envelope"></i> info@sosiologi-kelasx.com</a></li>
-                        <li><a href="tel:+628123456789"><i class="fas fa-phone"></i> (0333) 123-4567</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> Senin-Jumat: 06.45 - 15.30</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Banyuwangi</a></li>
+                        <li><a href="mailto:info@sosiologi-x.com"><i class="fas fa-envelope"></i> Email</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> 06.45-15.30</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Modul Pembelajaran Sosiologi Kelas X. Semua Hak Dilindungi.</p>
+                <p>&copy; 2025 Modul Sosiologi Kelas X. Semua Hak Dilindungi.</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Home -->
-    <a href="index.html" class="back-home animate delay-1">
-        <i class="fas fa-home"></i> Kembali ke Halaman Muka
+    <a href="index.html" class="back-home">
+        <i class="fas fa-home"></i> Halaman Muka
     </a>
 
     <script>
         // Visitor Counter
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount = parseInt(visitorCount) + 1;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('visitorCounter').textContent = visitorCount.toLocaleString();
+        let count = localStorage.getItem('visitorCount') || 0;
+        count = parseInt(count) + 1;
+        localStorage.setItem('visitorCount', count);
+        document.getElementById('visitorCounter').textContent = count.toLocaleString();
 
         // Online counter
-        document.getElementById('onlineCount').textContent = Math.floor(Math.random() * 15) + 3;
+        document.getElementById('onlineCount').textContent = Math.floor(Math.random() * 12) + 3;
 
         // Search
         function searchModules() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.module-card');
-            cards.forEach(card => {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            document.querySelectorAll('.module-card').forEach(card => {
                 const title = card.getAttribute('data-title').toLowerCase();
-                card.style.display = title.includes(input) ? 'block' : 'none';
+                card.style.display = title.includes(q) ? 'block' : 'none';
             });
         }
 
@@ -846,7 +853,7 @@
             if (e.key === 'Enter') searchModules();
         });
 
-        // Animations
+        // Animasi
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.animate').forEach((el, i) => {
                 el.style.animationDelay = `${i * 0.1}s`;
