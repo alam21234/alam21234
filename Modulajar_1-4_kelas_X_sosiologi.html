@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul Ajar: Pengantar Sosiologi | SMAN 1 Cluring</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3498db;
+      --secondary: #e74c3c;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --accent: #f39c12;
+      --success: #2ecc71;
+      --text: #34495e;
+      --light-blue: #e8f4fc;
+      --light-orange: #fdebd0;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background-color: #f5f7fa;
+      line-height: 1.6;
+    }
+    
+    /* Header dengan efek partikel */
+    .header-gradient {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      color: white;
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .particle {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .school-badge {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .school-badge i {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+    
+    .header-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header-content h2 {
+      font-weight: 400;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .module-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .info-item {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+    
+    /* Navigasi tab */
+    .tab-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    
+    .tabs {
+      display: flex;
+      background: var(--light);
+      border-bottom: 1px solid #eaeaea;
+    }
+    
+    .tab {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      transition: var(--transition);
+      border-bottom: 3px solid transparent;
+    }
+    
+    .tab.active {
+      border-bottom: 3px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .tab:hover:not(.active) {
+      background: rgba(52, 152, 219, 0.1);
+    }
+    
+    .tab-content {
+      padding: 2rem;
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Kartu konten */
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    .card-header i {
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+    
+    .card-header h3 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      font-size: 1.4rem;
+    }
+    
+    /* Elemen pedagogis */
+    .learning-objective {
+      background: var(--light-blue);
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .activity-box {
+      background: var(--light-orange);
+      border-left: 4px solid var(--secondary);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .theory-highlight {
+      background: #e8f8f5;
+      border-left: 4px solid var(--success);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .assessment-box {
+      background: #fef9e7;
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .pedagogy-note {
+      background: #f4f6f6;
+      border-left: 4px solid #95a5a6;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    /* Tabel */
+    .responsive-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    
+    .responsive-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.8rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .responsive-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .responsive-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    
+    .responsive-table tr:hover {
+      background: #f1f9ff;
+    }
+    
+    /* Tombol download */
+    .download-section {
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+    
+    .download-btn {
+      background: linear-gradient(135deg, var(--primary), #2980b9);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+      background: linear-gradient(135deg, #2980b9, var(--primary));
+    }
+    
+    .download-btn i {
+      font-size: 1.3rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    /* JP Indicator */
+    .jp-indicator {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tabs {
+        flex-direction: column;
+      }
+      
+      .tab {
+        border-bottom: 1px solid #eaeaea;
+      }
+      
+      .tab.active {
+        border-bottom: 3px solid var(--primary);
+      }
+      
+      .header-content h1 {
+        font-size: 2rem;
+      }
+      
+      .header-content h2 {
+        font-size: 1.4rem;
+      }
+      
+      .module-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .info-item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header dengan gradient dan efek partikel -->
+  <header class="header-gradient">
+    <div class="header-content">
+      <div class="school-badge">
+        <i class="fas fa-school"></i>
+        <div>
+          <h1>Modul Ajar Deep Learning</h1>
+          <h2>Mata Pelajaran: Sosiologi - Bab: Pengantar Sosiologi</h2>
+        </div>
+      </div>
+      
+      <div class="module-info">
+        <div class="info-item">
+          <i class="fas fa-user"></i> Penyusun: Alamsah, SE
+        </div>
+        <div class="info-item">
+          <i class="fas fa-graduation-cap"></i> Kelas: X / Fase E / Semester Ganjil
+        </div>
+        <div class="info-item">
+          <i class="fas fa-calendar-alt"></i> Tahun Pelajaran: 2025/2026
+        </div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i> Pertemuan: 1-4 (12 JP)
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigasi tab responsif -->
+  <div class="tab-container">
+    <div class="tabs">
+      <div class="tab active" data-tab="identitas">Identitas Modul</div>
+      <div class="tab" data-tab="informasi">Informasi Umum</div>
+      <div class="tab" data-tab="desain">Desain Pembelajaran</div>
+      <div class="tab" data-tab="rpp">RPP</div>
+      <div class="tab" data-tab="asesmen">Asesmen</div>
+      <div class="tab" data-tab="tindak-lanjut">Tindak Lanjut</div>
+    </div>
+    
+    <!-- Tab Content: Identitas Modul -->
+    <div class="tab-content active" id="identitas-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-id-card"></i>
+          <h3>Identitas Modul</h3>
+        </div>
+        <p><strong>Nama Sekolah:</strong> SMAN 1 Cluring</p>
+        <p><strong>Nama Penyusun:</strong> Alamsah, SE</p>
+        <p><strong>Mata Pelajaran:</strong> Sosiologi</p>
+        <p><strong>Kelas/Fase/Semester:</strong> X/E/Ganjil</p>
+        <p><strong>Pertemuan Ke:</strong> 1 S.d 4</p>
+        <p><strong>Alokasi Waktu:</strong> 12 JP (4 Pertemuan × 3 JP)</p>
+        <p><strong>Tahun Pelajaran:</strong> 2025/2026</p>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Informasi Umum -->
+    <div class="tab-content" id="informasi-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-users"></i>
+          <h3>Identifikasi Kesiapan Peserta Didik</h3>
+        </div>
+        <p>Peserta didik berasal dari latar belakang sosial yang beragam, memiliki pengetahuan awal yang terbatas mengenai Sosiologi. Mereka menunjukkan minat tinggi terhadap isu sosial terkini, namun sebagian masih perlu dibimbing untuk berpikir sistematis dan reflektif.</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-book"></i>
+          <h3>Karakteristik Materi</h3>
+        </div>
+        <p>Bab ini membahas:</p>
+        <ul>
+          <li>Ruang lingkup sosiologi</li>
+          <li>Kelahiran dan perkembangan sosiologi</li>
+          <li>Objek kajian sosiologi</li>
+          <li>Teori fungsionalisme struktural</li>
+        </ul>
+        <p>Materi ini menjadi pondasi pemahaman ilmu sosial dan berkontribusi dalam membentuk karakter peserta didik yang berwawasan sosial sesuai nilai Pancasila.</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Dimensi Profil Lulusan Pembelajaran</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Dimensi</th>
+              <th>Relevansi dengan Materi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Keimanan dan Ketakwaan</td>
+              <td>Mengajak peserta didik merefleksikan nilai-nilai sosial yang sejalan dengan ajaran agama dan etika dalam kehidupan bermasyarakat.</td>
+            </tr>
+            <tr>
+              <td>Kewargaan</td>
+              <td>Memberikan pemahaman tentang pentingnya peran individu dalam masyarakat serta membentuk sikap warga negara yang aktif dan bertanggung jawab.</td>
+            </tr>
+            <tr>
+              <td>Penalaran Kritis</td>
+              <td>Melatih peserta didik untuk berpikir kritis dalam menganalisis isu-isu sosial dan memahami teori-teori sosiologi secara logis dan sistematis.</td>
+            </tr>
+            <tr>
+              <td>Kreativitas</td>
+              <td>Mendorong peserta didik untuk mengembangkan pemikiran dan solusi baru terhadap permasalahan sosial melalui perspektif sosiologis.</td>
+            </tr>
+            <tr>
+              <td>Kolaborasi</td>
+              <td>Mengembangkan kemampuan peserta didik untuk bekerja sama dalam diskusi kelompok dan proyek sosial.</td>
+            </tr>
+            <tr>
+              <td>Mandiri</td>
+              <td>Membangun kemandirian dalam memahami konsep-konsep dasar sosiologi dan menerapkannya dalam pengamatan sosial sehari-hari.</td>
+            </tr>
+            <tr>
+              <td>Kesehatan</td>
+              <td>Mengaitkan perilaku sosial dengan pentingnya menjaga keseimbangan antara kesehatan fisik dan mental dalam kehidupan bermasyarakat.</td>
+            </tr>
+            <tr>
+              <td>Komunikasi</td>
+              <td>Mengembangkan kemampuan peserta didik dalam menyampaikan ide dan pendapat secara lisan dan tulisan tentang fenomena sosial yang diamati.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Desain Pembelajaran -->
+    <div class="tab-content" id="desain-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-bullseye"></i>
+          <h3>Capaian Pembelajaran</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Elemen</th>
+              <th>Capaian Pembelajaran</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pertemuan 1</td>
+              <td>Pemahaman Konsep</td>
+              <td>Memahami fungsi Sosiologi sebagai ilmu sosial.</td>
+            </tr>
+            <tr>
+              <td>Pertemuan 2</td>
+              <td>Pemahaman Konsep</td>
+              <td>Memahami sejarah lahirnya Sosiologi dan fungsinya dalam kehidupan sosial.</td>
+            </tr>
+            <tr>
+              <td>Pertemuan 3</td>
+              <td>Pemahaman Konsep</td>
+              <td>Mengidentifikasi objek kajian dan relasi individu-masyarakat.</td>
+            </tr>
+            <tr>
+              <td>Pertemuan 4</td>
+              <td>Pemahaman Konsep</td>
+              <td>Menganalisis teori Fungsionalisme dalam kehidupan sehari-hari.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-sitemap"></i>
+          <h3>Lintas Disiplin Ilmu</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Bidang Ilmu</th>
+              <th>Relevansi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sejarah</td>
+              <td>Memahami perkembangan awal lahirnya ilmu Sosiologi dalam konteks sejarah dunia.</td>
+            </tr>
+            <tr>
+              <td>Psikologi Sosial</td>
+              <td>Menjelaskan interaksi antara individu dan masyarakat dalam dinamika sosial.</td>
+            </tr>
+            <tr>
+              <td>Pendidikan Pancasila</td>
+              <td>Menguatkan nilai-nilai moral dan sosial berdasarkan Pancasila.</td>
+            </tr>
+            <tr>
+              <td>Koding dan Kecerdasan Artifisial</td>
+              <td>Menganalisis data sosial melalui teknologi seperti AI dan memahami pola interaksi sosial menggunakan pendekatan digital dan pemrograman sederhana.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="learning-objective">
+        <h4><i class="fas fa-tasks"></i> Tujuan Pembelajaran</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Topik</th>
+              <th>Tujuan Pembelajaran</th>
+              <th>Aktivitas Pembelajaran</th>
+              <th>Penilaian</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Pengantar Sosiologi</td>
+              <td>Peserta didik mampu menyebutkan ruang lingkup dan manfaat Sosiologi sebagai ilmu sosial dengan benar.</td>
+              <td>Diskusi kelas, kontrak belajar, mind mapping</td>
+              <td>Refleksi kontrak belajar, Kuis ringan</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kelahiran & Perkembangan Sosiologi</td>
+              <td>Peserta didik mampu menjelaskan sejarah lahirnya Sosiologi dan perannya dalam kehidupan sosial.</td>
+              <td>Ceramah interaktif, studi literatur, tanya jawab</td>
+              <td>Kuis lisan, mind mapping</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Objek Kajian Sosiologi</td>
+              <td>Peserta didik mampu mengidentifikasi objek kajian Sosiologi dan hubungan individu-masyarakat secara tepat.</td>
+              <td>Diskusi kelompok, studi kasus, presentasi hasil diskusi</td>
+              <td>LKS, pertanyaan terbuka</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Teori Fungsionalisme</td>
+              <td>Peserta didik mampu menganalisis teori Fungsionalisme struktural dan memberikan contoh aplikasinya dalam kehidupan nyata.</td>
+              <td>Role play, pemecahan masalah, studi kasus fungsionalisme</td>
+              <td>Kuis praktik, laporan kasus</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-globe-asia"></i>
+          <h3>Topik Pembelajaran Kontekstual</h3>
+        </div>
+        <p>Bab 1: Pengantar Sosiologi</p>
+        <p>Pembelajaran disesuaikan dengan konteks kehidupan nyata di sekitar peserta didik, seperti:</p>
+        <ul>
+          <li>Lingkungan sekolah dan keluarga → sebagai contoh penerapan nilai sosial dan interaksi sosial.</li>
+          <li>Fenomena sosial terkini → konflik sosial ringan di lingkungan, gotong royong, peran institusi sosial.</li>
+          <li>Budaya lokal & kehidupan sehari-hari → memetakan norma sosial dan peran individu dalam masyarakat.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Tab Content: RPP -->
+    <div class="tab-content" id="rpp-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Rencana Pelaksanaan Pembelajaran (RPP)</h3>
+        </div>
+        
+        <!-- Pertemuan 1 -->
+        <div class="activity-box">
+          <h4>Pertemuan 1: Ruang Lingkup dan Manfaat Sosiologi <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Waktu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  1. Guru membuka pelajaran dengan salam, doa, dan presensi.<br>
+                  2. Mengajak peserta didik untuk merenungkan pentingnya belajar Sosiologi (Mindful Learning).<br>
+                  3. Mengaitkan materi dengan pengalaman sosial siswa sehari-hari (Meaningful Learning).<br>
+                  4. Ice breaking: Sharing ringan tentang fenomena sosial yang pernah dialami siswa (Joyful Learning).
+                </td>
+                <td>10 Menit</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  A. Understanding: <br>
+                  - Guru memaparkan materi tentang ruang lingkup Sosiologi.<br>
+                  - Diskusi interaktif tentang manfaat Sosiologi.<br><br>
+                  B. Applying:<br>
+                  - Siswa membuat mind mapping sederhana tentang manfaat Sosiologi.<br>
+                  - Siswa menuliskan peran dirinya di masyarakat.<br><br>
+                  C. Reflecting:<br>
+                  - Siswa berbagi pengalaman tentang bagaimana pengetahuan sosial dapat membantu menyelesaikan masalah.
+                </td>
+                <td>70 Menit</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  1. Guru memberikan umpan balik.<br>
+                  2. Bersama peserta didik menyimpulkan materi.<br>
+                  3. Refleksi harian.<br>
+                  4. Guru menutup pelajaran dengan salam dan doa.
+                </td>
+                <td>10 Menit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Pertemuan 2 -->
+        <div class="activity-box">
+          <h4>Pertemuan 2: Perkembangan Sosiologi <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Waktu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  1. Guru membuka pelajaran dengan salam, doa, dan absensi.<br>
+                  2. Mindful Learning: Mengajak siswa berpikir tentang perubahan sosial.<br>
+                  3. Meaningful Learning: Diskusi singkat tentang pentingnya memahami sejarah perkembangan ilmu sosial.<br>
+                  4. Joyful Learning: Guru menceritakan kisah tokoh pendiri Sosiologi dengan gaya storytelling.
+                </td>
+                <td>10 Menit</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  A. Understanding: <br>
+                  - Guru memaparkan materi tentang sejarah kelahiran dan perkembangan Sosiologi.<br><br>
+                  B. Applying:<br>
+                  - Siswa membuat timeline sejarah Sosiologi.<br>
+                  - Diskusi kelompok: Membandingkan permasalahan sosial masa lampau dan saat ini.<br><br>
+                  C. Reflecting:<br>
+                  - Siswa berdiskusi tentang relevansi sejarah Sosiologi dengan permasalahan sosial masa kini.
+                </td>
+                <td>70 Menit</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  1. Guru memberikan umpan balik.<br>
+                  2. Bersama siswa menyimpulkan materi.<br>
+                  3. Refleksi harian.<br>
+                  4. Guru menutup dengan salam dan doa.
+                </td>
+                <td>10 Menit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Pertemuan 3 - Ditambahkan -->
+        <div class="activity-box">
+          <h4>Pertemuan 3: Objek Kajian Sosiologi <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Waktu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  1. Guru membuka pelajaran dengan salam, doa, dan presensi.<br>
+                  2. Mindful Learning: Mengajak siswa merenungkan peran dirinya di lingkungan sosial.<br>
+                  3. Meaningful Learning: Mengaitkan materi dengan kegiatan gotong royong dan peran di keluarga/sekolah.<br>
+                  4. Joyful Learning: Ice breaking dengan permainan peran tentang hubungan individu-masyarakat.
+                </td>
+                <td>10 Menit</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  A. Understanding: <br>
+                  - Guru menjelaskan objek kajian Sosiologi (fakta sosial, tindakan sosial, imajinasi sosial, realitas sosial).<br>
+                  - Demonstrasi interaksi sosial melalui contoh nyata.<br><br>
+                  B. Applying:<br>
+                  - Siswa berdiskusi kelompok menganalisis contoh hubungan individu-masyarakat di lingkungan sekolah dan masyarakat lokal.<br>
+                  - Siswa membuat peta konsep tentang objek kajian Sosiologi.<br><br>
+                  C. Reflecting:<br>
+                  - Setiap kelompok mempresentasikan hasil diskusi.<br>
+                  - Siswa lain memberikan tanggapan dan umpan balik.
+                </td>
+                <td>70 Menit</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  1. Guru memberikan umpan balik atas hasil diskusi.<br>
+                  2. Bersama siswa menyimpulkan materi tentang relasi individu dan masyarakat.<br>
+                  3. Refleksi: siswa menuliskan satu hal baru yang dipahami.<br>
+                  4. Salam dan doa penutup.
+                </td>
+                <td>10 Menit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Pertemuan 4 - Ditambahkan -->
+        <div class="activity-box">
+          <h4>Pertemuan 4: Teori Fungsionalisme Struktural <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Waktu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  1. Guru membuka pelajaran dengan salam, doa, dan presensi.<br>
+                  2. Mindful Learning: Mengajak siswa merenungkan kerja sama sosial yang sering dilakukan.<br>
+                  3. Meaningful Learning: Mengaitkan fungsi masing-masing peran sosial di kehidupan sehari-hari.<br>
+                  4. Joyful Learning: Ice breaking dengan role play ringan tentang peran dalam keluarga/sekolah.
+                </td>
+                <td>10 Menit</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  A. Understanding: <br>
+                  - Guru menjelaskan teori Fungsionalisme Struktural dan contoh aplikasinya.<br>
+                  - Demonstrasi konsep fungsi dan disfungsi dalam sistem sosial.<br><br>
+                  B. Applying:<br>
+                  - Siswa melakukan role play tentang peran sosial di lingkungan sekitar (keluarga, sekolah, masyarakat).<br>
+                  - Analisis kasus: Mengidentifikasi fungsi berbagai lembaga sosial di masyarakat.<br><br>
+                  C. Reflecting:<br>
+                  - Diskusi kelas tentang bagaimana tiap peran saling melengkapi.<br>
+                  - Eksplorasi dampak jika salah satu peran tidak berfungsi.
+                </td>
+                <td>70 Menit</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  1. Guru memberikan umpan balik atas role play dan diskusi.<br>
+                  2. Bersama siswa menyimpulkan pembelajaran tentang Fungsionalisme.<br>
+                  3. Refleksi: Siswa menuliskan peran sosial yang paling sering mereka jalankan serta tantangannya.<br>
+                  4. Salam dan doa penutup.
+                </td>
+                <td>10 Menit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Asesmen -->
+    <div class="tab-content" id="asesmen-content">
+      <div class="assessment-box">
+        <h4><i class="fas fa-clipboard-check"></i> Asesmen Awal (Diagnostik)</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Format Asesmen</th>
+              <th>Tujuan</th>
+              <th>Instrumen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Tanya jawab, pertanyaan terbuka</td>
+              <td>Mengetahui pemahaman awal peserta didik tentang lingkungan sosial</td>
+              <td>Lisan: "Menurutmu, apa itu masyarakat?"</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kuis ringan</td>
+              <td>Mengidentifikasi pemahaman siswa tentang sejarah atau perubahan sosial</td>
+              <td>Kuis pilihan ganda sederhana via Kahoot / lisan</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Diskusi eksplorasi awal</td>
+              <td>Menggali pengetahuan awal tentang hubungan individu dengan masyarakat</td>
+              <td>Pertanyaan: "Apa contoh interaksi sehari-hari?"</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Cerita pengalaman pribadi (sharing)</td>
+              <td>Mengidentifikasi pemahaman tentang konflik atau kerjasama di lingkungan sekitar</td>
+              <td>Lisan atau tulisan bebas: pengalaman konflik sosial</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="assessment-box">
+        <h4><i class="fas fa-chart-line"></i> Asesmen Proses (Formatif)</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Format Asesmen</th>
+              <th>Tujuan</th>
+              <th>Instrumen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mind Mapping + Jurnal Refleksi</td>
+              <td>Memetakan pemahaman tentang manfaat Sosiologi dan refleksi peran diri di masyarakat</td>
+              <td>Kertas/Padlet untuk mind mapping & refleksi</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Timeline Sejarah + Diskusi</td>
+              <td>Menguji kemampuan menyusun urutan peristiwa dan memahami relevansinya dengan kondisi sosial modern</td>
+              <td>Timeline manual/digital + lembar diskusi</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Infografis Hubungan Individu-Masyarakat</td>
+              <td>Menyajikan pemahaman tentang interaksi sosial melalui visualisasi sederhana</td>
+              <td>Canva/Poster manual tentang interaksi sosial</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Pohon Masalah & Solusi (Pohon Sosiologi)</td>
+              <td>Mengidentifikasi masalah sosial dan membuat solusi sederhana sesuai teori sosiologi</td>
+              <td>Lembar kerja pohon masalah-solusi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="theory-highlight">
+        <h4><i class="fas fa-star"></i> Asesmen Akhir (Sumatif)</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Format Sumatif</th>
+              <th>Tujuan</th>
+              <th>Instrumen Rubrik</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1–4</td>
+              <td>Penilaian Proyek Mini "Sosiologi di Sekitarku"</td>
+              <td>Menganalisis fenomena sosial sederhana dan menyajikannya secara kreatif dengan jiwa Pancasila</td>
+              <td>
+                Rubrik Penilaian Proyek:<br>
+                - Analisis isu sosial (25%)<br>
+                - Solusi yang ditawarkan (20%)<br>
+                - Kreativitas penyajian (20%)<br>
+                - Kolaborasi kelompok (15%)<br>
+                - Penjiwaan nilai Pancasila (20%)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Tindak Lanjut -->
+    <div class="tab-content" id="tindak-lanjut-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Rencana Tindak Lanjut Pengayaan & Remedial</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Tindak Lanjut Remedial</th>
+              <th>Tindak Lanjut Pengayaan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                - Siswa yang belum paham ruang lingkup Sosiologi diminta membaca ulang materi dengan bimbingan guru.<br>
+                - Diskusi kecil dengan tutor sebaya.<br>
+                - Latihan soal pemahaman konsep melalui kuis ulang.
+              </td>
+              <td>
+                - Siswa membuat infografis "Peran Sosiologi dalam Kehidupan Modern".<br>
+                - Presentasi singkat di kelas atau unggahan di platform daring kelas.
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                - Bagi siswa yang kesulitan memahami sejarah Sosiologi, diberikan video pembelajaran tambahan tentang tokoh-tokoh Sosiologi.<br>
+                - Bimbingan individu untuk membuat garis waktu sejarah Sosiologi.
+              </td>
+              <td>
+                - Siswa melakukan penelusuran tokoh Sosiologi lainnya di luar buku ajar.<br>
+                - Membuat profil tokoh dan peranannya di era sekarang (dalam bentuk artikel mini).
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                - Siswa diberikan peta konsep kosong untuk diisi kembali tentang objek kajian Sosiologi.<br>
+                - Sesi tanya jawab tambahan bersama guru atau tutor sebaya.
+              </td>
+              <td>
+                - Membuat studi kasus sederhana tentang relasi individu dan masyarakat di lingkungan sekolah atau keluarga.<br>
+                - Diskusi presentasi hasil studi kasus.
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                - Latihan soal tentang teori Fungsionalisme secara bertahap.<br>
+                - Pemutaran video contoh aplikasi teori dalam kehidupan sosial.<br>
+                - Diskusi ulang secara berkelompok.
+              </td>
+              <td>
+                - Membuat video pendek/simulasi roleplay tentang penerapan teori Fungsionalisme di sekolah atau lingkungan sekitar.<br>
+                - Diunggah di platform kelas sebagai showcase.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Catatan pedagogis -->
+  <div class="pedagogy-note">
+    <p><i class="fas fa-lightbulb"></i> <strong>CATATAN PEDAGOGIS:</strong> Modul ini dirancang dengan pendekatan deep learning yang mengintegrasikan teknologi digital dan konteks lokal. Penggunaan HP sebagai alat pembelajaran diarahkan untuk meningkatkan keterlibatan siswa dalam proses pembelajaran sosiologi melalui aktivitas yang relevan dengan kehidupan sehari-hari.</p>
+  </div>
+  
+  <!-- Tombol download PDF -->
+  <div class="download-section">
+    <button class="download-btn">
+      <i class="fas fa-file-pdf"></i> Download Versi PDF
+    </button>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 SMAN 1 Cluring | Modul Ajar Deep Learning Sosiologi | Hak Cipta Dilindungi</p>
+  </footer>
+
+  <script>
+    // Tab navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and contents
+          tabs.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked tab
+          tab.classList.add('active');
+          
+          // Show corresponding content
+          const tabId = tab.getAttribute('data-tab');
+          document.getElementById(`${tabId}-content`).classList.add('active');
+        });
+      });
+      
+      // Create particle effect
+      const header = document.querySelector('.header-gradient');
+      for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random size and position
+        const size = Math.random() * 10 + 5;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const opacity = Math.random() * 0.3 + 0.1;
+        const animationDuration = Math.random() * 10 + 5;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.opacity = opacity;
+        particle.style.animation = `float ${animationDuration}s infinite ease-in-out`;
+        
+        header.appendChild(particle);
+      }
+      
+      // Add CSS for particle animation
+      const style = document.createElement('style');
+      style.innerHTML = `
+        @keyframes float {
+          0%, 100% { transform: translate(0, 0); }
+          25% { transform: translate(-5px, -5px); }
+          50% { transform: translate(5px, 5px); }
+          75% { transform: translate(-5px, 5px); }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>

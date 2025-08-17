@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul Ajar: Teori Konflik Sosial | SMAN 1 Cluring</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3498db;
+      --secondary: #e74c3c;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --accent: #f39c12;
+      --success: #2ecc71;
+      --text: #34495e;
+      --light-blue: #e8f4fc;
+      --light-orange: #fdebd0;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background-color: #f5f7fa;
+      line-height: 1.6;
+    }
+    
+    /* Header dengan efek partikel */
+    .header-gradient {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      color: white;
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .particle {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .school-badge {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .school-badge i {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+    
+    .header-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header-content h2 {
+      font-weight: 400;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .module-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .info-item {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+    
+    /* Navigasi tab */
+    .tab-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    
+    .tabs {
+      display: flex;
+      background: var(--light);
+      border-bottom: 1px solid #eaeaea;
+      flex-wrap: wrap;
+    }
+    
+    .tab {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      transition: var(--transition);
+      border-bottom: 3px solid transparent;
+    }
+    
+    .tab.active {
+      border-bottom: 3px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .tab:hover:not(.active) {
+      background: rgba(52, 152, 219, 0.1);
+    }
+    
+    .tab-content {
+      padding: 2rem;
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(-5px, -5px); }
+      50% { transform: translate(5px, 5px); }
+      75% { transform: translate(-5px, 5px); }
+    }
+    
+    /* Kartu konten */
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    .card-header i {
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+    
+    .card-header h3 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      font-size: 1.4rem;
+    }
+    
+    /* Elemen pedagogis */
+    .learning-objective {
+      background: var(--light-blue);
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .activity-box {
+      background: var(--light-orange);
+      border-left: 4px solid var(--secondary);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .theory-highlight {
+      background: #e8f8f5;
+      border-left: 4px solid var(--success);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .assessment-box {
+      background: #fef9e7;
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .pedagogy-note {
+      background: #f4f6f6;
+      border-left: 4px solid #95a5a6;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    /* Tabel */
+    .responsive-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    
+    .responsive-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.8rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .responsive-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .responsive-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    
+    .responsive-table tr:hover {
+      background: #f1f9ff;
+    }
+    
+    /* Tombol download */
+    .download-section {
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+    
+    .download-btn {
+      background: linear-gradient(135deg, var(--primary), #2980b9);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+      background: linear-gradient(135deg, #2980b9, var(--primary));
+    }
+    
+    .download-btn i {
+      font-size: 1.3rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    /* JP Indicator */
+    .jp-indicator {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tabs {
+        flex-direction: column;
+      }
+      
+      .tab {
+        border-bottom: 1px solid #eaeaea;
+      }
+      
+      .tab.active {
+        border-bottom: 3px solid var(--primary);
+      }
+      
+      .header-content h1 {
+        font-size: 2rem;
+      }
+      
+      .header-content h2 {
+        font-size: 1.4rem;
+      }
+      
+      .module-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .info-item {
+        width: 100%;
+      }
+      
+      .responsive-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header dengan gradient dan efek partikel -->
+  <header class="header-gradient">
+    <div class="header-content">
+      <div class="school-badge">
+        <i class="fas fa-book-open"></i>
+        <div>
+          <h1>Modul Ajar Deep Learning</h1>
+          <h2>Mata Pelajaran: Sosiologi - Teori Konflik Sosial</h2>
+        </div>
+      </div>
+      
+      <div class="module-info">
+        <div class="info-item">
+          <i class="fas fa-user"></i> Penyusun: Alamsah, SE
+        </div>
+        <div class="info-item">
+          <i class="fas fa-graduation-cap"></i> Kelas: X / Fase E / Semester Ganjil
+        </div>
+        <div class="info-item">
+          <i class="fas fa-calendar-alt"></i> Tahun Pelajaran: 2025/2026
+        </div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i> Pertemuan: 5-8 (12 JP)
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigasi tab responsif -->
+  <div class="tab-container">
+    <div class="tabs">
+      <div class="tab active" data-tab="identitas">Identitas Modul</div>
+      <div class="tab" data-tab="informasi">Informasi Umum</div>
+      <div class="tab" data-tab="desain">Desain Pembelajaran</div>
+      <div class="tab" data-tab="rpp">RPP</div>
+      <div class="tab" data-tab="asesmen">Asesmen</div>
+      <div class="tab" data-tab="tindak-lanjut">Tindak Lanjut</div>
+    </div>
+    
+    <!-- Tab Content: Identitas Modul -->
+    <div class="tab-content active" id="identitas-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-id-card"></i>
+          <h3>Identitas Modul</h3>
+        </div>
+        <p><strong>Nama Sekolah:</strong> SMAN 1 Cluring</p>
+        <p><strong>Nama Penyusun:</strong> Alamsah, SE</p>
+        <p><strong>Mata Pelajaran:</strong> Sosiologi</p>
+        <p><strong>Kelas/Fase/Semester:</strong> X/E/Ganjil</p>
+        <p><strong>Pertemuan Ke:</strong> 5 S.d 8</p>
+        <p><strong>Alokasi Waktu:</strong> 12 JP (4 Pertemuan × 3 JP)</p>
+        <p><strong>Tahun Pelajaran:</strong> 2025/2026</p>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Informasi Umum -->
+    <div class="tab-content" id="informasi-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-users"></i>
+          <h3>Identifikasi Kesiapan Peserta Didik</h3>
+        </div>
+        <p><strong>Kemampuan awal:</strong></p>
+        <p>Sebagian besar peserta didik telah memahami dasar-dasar interaksi sosial dan dinamika sosial dari pertemuan sebelumnya. Mereka cukup familiar dengan isu-isu sosial di lingkungan sekitar, seperti perbedaan sosial, keragaman budaya, dan potensi konflik.</p>
+        
+        <p><strong>Minat belajar:</strong></p>
+        <p>Peserta didik cenderung tertarik pada pembelajaran berbasis kasus nyata yang dekat dengan kehidupan mereka, seperti konflik sosial lokal atau fenomena sosial di media.</p>
+        
+        <p><strong>Kebutuhan belajar:</strong></p>
+        <p>Peserta didik membutuhkan latihan keterampilan berpikir kritis, komunikasi, dan kolaborasi dalam mengkaji konflik sosial serta mencari solusinya.</p>
+        
+        <p><strong>Kesiapan belajar:</strong></p>
+        <p>Peserta didik siap mengikuti pembelajaran dengan metode diskusi, observasi lapangan sederhana, presentasi, dan debat.</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-book"></i>
+          <h3>Karakteristik Materi</h3>
+        </div>
+        <p>Teori Konflik Sosial memiliki relevansi tinggi dengan kehidupan sehari-hari. Materi ini membantu siswa:</p>
+        <ul>
+          <li>Memahami penyebab dan dampak konflik sosial dalam masyarakat</li>
+          <li>Menumbuhkan empati dan kemampuan melihat konflik secara objektif</li>
+          <li>Meningkatkan kemampuan menganalisis permasalahan sosial dan mencari solusinya secara kritis</li>
+        </ul>
+        
+        <p><strong>Konteks:</strong></p>
+        <p>Pembelajaran dilakukan dengan studi kasus lokal agar lebih kontekstual dan bermakna bagi peserta didik.</p>
+        
+        <p><strong>Signifikansi:</strong></p>
+        <p>Materi ini penting untuk membangun kesadaran sosial, mengurangi potensi intoleransi, dan mendorong budaya damai di masyarakat.</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Dimensi Profil Lulusan Pembelajaran</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Dimensi</th>
+              <th>Relevansi dengan Materi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beriman, bertakwa, dan berakhlak mulia</td>
+              <td>Mengedepankan penyelesaian konflik dengan cara damai dan adil.</td>
+            </tr>
+            <tr>
+              <td>Berkebinekaan global</td>
+              <td>Memahami dan menghargai perbedaan dalam masyarakat.</td>
+            </tr>
+            <tr>
+              <td>Bergotong royong</td>
+              <td>Melatih kolaborasi dalam menyelesaikan masalah sosial.</td>
+            </tr>
+            <tr>
+              <td>Bernalar kritis</td>
+              <td>Menganalisis penyebab dan dampak konflik sosial.</td>
+            </tr>
+            <tr>
+              <td>Kreatif</td>
+              <td>Menemukan solusi alternatif untuk mencegah konflik.</td>
+            </tr>
+            <tr>
+              <td>Mandiri</td>
+              <td>Bertanggung jawab atas hasil kerja individu maupun kelompok.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Desain Pembelajaran -->
+    <div class="tab-content" id="desain-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-bullseye"></i>
+          <h3>Capaian Pembelajaran</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Elemen</th>
+              <th>Capaian Pembelajaran</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Pemahaman Konsep</td>
+              <td>Menjelaskan teori konflik dan penyebab konflik sosial sesuai dengan perspektif sosiologi.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Keterampilan Proses</td>
+              <td>Mengidentifikasi contoh konflik sosial di lingkungan sekitar secara sederhana.</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Keterampilan Proses</td>
+              <td>Mengolah data konflik sosial lokal menjadi peta pikiran yang sistematis.</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Keterampilan Proses</td>
+              <td>Mengkomunikasikan hasil pengamatan konflik sosial melalui presentasi dan debat.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-sitemap"></i>
+          <h3>Lintas Disiplin Ilmu</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Bidang Ilmu</th>
+              <th>Relevansi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bahasa Indonesia</td>
+              <td>Mengembangkan keterampilan berbicara, menyampaikan argumen, dan menyusun teks presentasi hasil pengamatan.</td>
+            </tr>
+            <tr>
+              <td>PPKn</td>
+              <td>Menyelaraskan pemahaman tentang penyelesaian konflik dengan nilai-nilai Pancasila dan musyawarah mufakat.</td>
+            </tr>
+            <tr>
+              <td>Geografi</td>
+              <td>Mengenali potensi konflik sosial terkait faktor wilayah dan keragaman lokal.</td>
+            </tr>
+            <tr>
+              <td>TIK</td>
+              <td>Menggunakan media digital untuk membuat mind map, presentasi, atau dokumentasi hasil observasi.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="learning-objective">
+        <h4><i class="fas fa-tasks"></i> Tujuan Pembelajaran</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Topik</th>
+              <th>Tujuan Pembelajaran</th>
+              <th>Aktivitas Pembelajaran</th>
+              <th>Penilaian</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Teori Konflik (Bagian 1)</td>
+              <td>Siswa mampu menjelaskan teori konflik sosial dan mengidentifikasi penyebab konflik sosial secara runtut dan tepat.</td>
+              <td>Pemaparan materi, studi kasus lokal, kuis singkat, LKS analisis konflik</td>
+              <td>Kuis pilihan ganda, LKS analisis konflik</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Teori Konflik (Bagian 2)</td>
+              <td>Siswa mampu mengidentifikasi minimal 2 contoh konflik sosial di lingkungan sekitar dengan teknik observasi dan diskusi.</td>
+              <td>Observasi sekitar, diskusi kelompok, tanya jawab</td>
+              <td>Catatan hasil observasi & diskusi kelompok</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Teori Konflik (Bagian 3)</td>
+              <td>Siswa mampu mengolah data konflik sosial lokal menjadi peta pikiran konflik yang memuat penyebab, pihak terkait, dampak, dan solusi.</td>
+              <td>Presentasi hasil studi kasus, review materi, membuat peta pikiran konflik</td>
+              <td>Penilaian mind map (peta pikiran) & presentasi</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Teori Konflik (Bagian 4)</td>
+              <td>Siswa mampu mempresentasikan dan mengkomunikasikan hasil pengamatan konflik sosial serta mengusulkan solusi alternatif melalui debat terbuka.</td>
+              <td>Presentasi kelas, debat terbuka, tanya jawab presentasi</td>
+              <td>Penilaian presentasi & penilaian debat</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-globe-asia"></i>
+          <h3>Topik Pembelajaran Kontekstual</h3>
+        </div>
+        <p><strong>Studi Kasus Lokal:</strong></p>
+        <ul>
+          <li>Konflik antar warga terkait batas tanah atau lahan</li>
+          <li>Konflik budaya dalam masyarakat multikultural</li>
+          <li>Konflik sosial di media sosial terkait isu intoleransi</li>
+          <li>Konflik antar kelompok remaja</li>
+        </ul>
+        
+        <p><strong>Kontekstualisasi Pembelajaran:</strong></p>
+        <p>Materi disajikan dengan mengangkat masalah nyata di sekitar peserta didik agar lebih relevan dengan kehidupan mereka. Hal ini bertujuan agar siswa dapat menerapkan teori sosiologi secara langsung pada realitas sosial di lingkungan mereka.</p>
+      </div>
+    </div>
+    
+    <!-- Tab Content: RPP -->
+    <div class="tab-content" id="rpp-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Rencana Pelaksanaan Pembelajaran (RPP)</h3>
+        </div>
+        
+        <!-- Pertemuan 5 -->
+        <div class="activity-box">
+          <h4>Pertemuan 5: Teori Konflik Sosial <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Menit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  - Guru menyapa peserta didik, mengajak berdoa<br>
+                  - Mindful: Guru mengajak peserta didik menyadari pentingnya memahami konflik sosial<br>
+                  - Meaningful: Pertanyaan pemantik: "Pernahkah kalian melihat konflik di sekitar kita?"<br>
+                  - Joyful: Ice breaking tentang perbedaan pendapat di kelas
+                </td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  - Understanding: Guru menjelaskan teori konflik dari Karl Marx, Lewis Coser, dan Ralf Dahrendorf<br>
+                  - Siswa membaca teks bacaan tentang konflik sosial<br>
+                  - Applying: Siswa mengisi LKS analisis konflik<br>
+                  - Reflecting: Diskusi kelas tentang hasil LKS
+                </td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  - Umpan balik: Guru menanyakan poin-poin penting<br>
+                  - Kesimpulan: Merangkum teori konflik dan penyebab konflik<br>
+                  - Refleksi: Siswa menuliskan 1 hal baru yang dipelajari<br>
+                  - Guru menutup pembelajaran
+                </td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Pertemuan 6 -->
+        <div class="activity-box">
+          <h4>Pertemuan 6: Identifikasi Konflik Sosial <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Menit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  - Guru menyapa peserta didik, mengajak berdoa<br>
+                  - Mindful: Menyadari bahwa setiap konflik memiliki dampak sosial<br>
+                  - Meaningful: Pengantar tentang konflik di lingkungan sekitar<br>
+                  - Joyful: Siswa menyebutkan konflik ringan yang pernah dialami
+                </td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  - Understanding: Guru menjelaskan tahapan observasi sosial<br>
+                  - Applying: Siswa melakukan observasi sederhana di lingkungan sekitar<br>
+                  - Mengisi format observasi atau jurnal pengamatan<br>
+                  - Reflecting: Diskusi kelompok kecil tentang konflik yang ditemukan
+                </td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  - Umpan balik: Perwakilan kelompok menyampaikan contoh konflik<br>
+                  - Kesimpulan: Menarik benang merah tentang faktor penyebab konflik<br>
+                  - Refleksi: Siswa menuliskan satu sikap untuk mencegah konflik<br>
+                  - Guru menutup pembelajaran
+                </td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Pertemuan 7 -->
+        <div class="activity-box">
+          <h4>Pertemuan 7: Peta Pikiran Konflik Sosial <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Menit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  - Guru menyapa peserta didik, mengajak berdoa<br>
+                  - Mindful: Merenungkan dampak konflik jika tidak diselesaikan<br>
+                  - Meaningful: Mengaitkan pembelajaran dengan konflik yang diamati<br>
+                  - Joyful: Tanya jawab tentang pengalaman observasi konflik
+                </td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  - Understanding: Guru menjelaskan cara membuat peta pikiran konflik<br>
+                  - Applying: Siswa membuat mind map konflik dari hasil observasi<br>
+                  - Mind map bisa dibuat manual atau digital<br>
+                  - Reflecting: Siswa mempresentasikan mind map secara kelompok
+                </td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  - Umpan balik: Penguatan terhadap konsep dalam mind map<br>
+                  - Kesimpulan: Konflik bisa dianalisis secara sistematis<br>
+                  - Refleksi: Siswa menuliskan hal penting dalam pemetaan konflik<br>
+                  - Guru menutup pembelajaran
+                </td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Pertemuan 8 -->
+        <div class="activity-box">
+          <h4>Pertemuan 8: Presentasi dan Debat Solusi Konflik <span class="jp-indicator">3 JP</span></h4>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan Pembelajaran</th>
+                <th>Menit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pendahuluan</td>
+                <td>
+                  - Guru menyapa peserta didik, mengajak berdoa<br>
+                  - Mindful: Pentingnya menyampaikan pendapat dengan santun<br>
+                  - Meaningful: Konflik tidak selalu negatif jika diselesaikan dengan tepat<br>
+                  - Joyful: Permainan peran tentang situasi konflik di sekolah
+                </td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Inti</td>
+                <td>
+                  - Understanding: Guru menjelaskan teknis presentasi dan debat<br>
+                  - Applying: Kelompok siswa mempresentasikan hasil pengamatan<br>
+                  - Siswa lain mengajukan pertanyaan atau menanggapi<br>
+                  - Reflecting: Guru memberikan klarifikasi dan penguatan
+                </td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <td>Penutup</td>
+                <td>
+                  - Umpan balik: Pengalaman yang dirasakan saat debat<br>
+                  - Kesimpulan: Komunikasi efektif dan sikap terbuka mencegah konflik<br>
+                  - Refleksi: Siswa menuliskan solusi nyata untuk mencegah konflik<br>
+                  - Guru menutup pembelajaran
+                </td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Asesmen -->
+    <div class="tab-content" id="asesmen-content">
+      <div class="assessment-box">
+        <h4><i class="fas fa-clipboard-check"></i> Asesmen Awal (Diagnostik)</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Format Asesmen</th>
+              <th>Tujuan</th>
+              <th>Instrumen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Kuis singkat</td>
+              <td>Mengetahui pemahaman awal tentang konsep konflik sosial</td>
+              <td>Google Form, Quizizz, atau soal tulis di LKS</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Diskusi dan Tanya Jawab</td>
+              <td>Mengidentifikasi pengalaman tentang konflik di lingkungan sekitar</td>
+              <td>Pertanyaan pemantik di kelas</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Review mind mapping awal</td>
+              <td>Mengukur pemahaman awal tentang alur penyebab-akibat konflik</td>
+              <td>Pertanyaan terbuka: "Apa yang Anda pahami tentang peta konflik?"</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Pertanyaan Reflektif</td>
+              <td>Mengidentifikasi kesiapan untuk mempresentasikan dan berdebat</td>
+              <td>Pertanyaan: "Apa tantangan saat menyampaikan pendapat tentang konflik?"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="assessment-box">
+        <h4><i class="fas fa-chart-line"></i> Asesmen Proses (Formatif)</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Format Asesmen</th>
+              <th>Tujuan</th>
+              <th>Instrumen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>LKS Analisis Konflik</td>
+              <td>Mengukur pemahaman teori konflik dan kemampuan menerapkannya</td>
+              <td>Lembar kerja siswa, catatan observasi guru</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Hasil Observasi Konflik</td>
+              <td>Mengidentifikasi konflik di lingkungan sekitar secara kolaboratif</td>
+              <td>Form observasi, dokumentasi hasil diskusi</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Produk Mind Map</td>
+              <td>Mengolah data konflik menjadi visualisasi penyebab-akibat-solusi</td>
+              <td>Mind map manual/digital, rubrik peta pikiran</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Presentasi dan Debat Kelas</td>
+              <td>Mengkomunikasikan hasil analisis konflik dan solusi</td>
+              <td>Video presentasi, catatan debat, jurnal refleksi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="theory-highlight">
+        <h4><i class="fas fa-star"></i> Asesmen Akhir (Sumatif)</h4>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Format Sumatif</th>
+              <th>Tujuan</th>
+              <th>Instrumen Rubrik</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Kuis + LKS</td>
+              <td>Menilai pemahaman teori konflik secara konseptual</td>
+              <td>Rubrik jawaban benar, analisis LKS</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Laporan Observasi</td>
+              <td>Menilai kemampuan mengidentifikasi konflik nyata</td>
+              <td>Rubrik laporan observasi (kejelasan, detail, orisinalitas)</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Mind Map Konflik</td>
+              <td>Menilai kemampuan menganalisis data konflik secara visual</td>
+              <td>Rubrik peta pikiran: isi, kreativitas, kerapian</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Presentasi & Debat Solusi</td>
+              <td>Menilai kemampuan menyampaikan pendapat, berkolaborasi, dan menyusun solusi</td>
+              <td>Rubrik presentasi & debat: analisis isu, solusi, kreativitas, kolaborasi, penjiwaan nilai Pancasila</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Tab Content: Tindak Lanjut -->
+    <div class="tab-content" id="tindak-lanjut-content">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Rencana Tindak Lanjut Pengayaan & Remedial</h3>
+        </div>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Tindak Lanjut Remedial</th>
+              <th>Tindak Lanjut Pengayaan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>
+                - Penjelasan ulang teori konflik secara lebih sederhana<br>
+                - Membaca ulang materi dengan bimbingan guru<br>
+                - Mengerjakan latihan soal tambahan
+              </td>
+              <td>
+                - Membuat contoh konflik baru dari berita aktual<br>
+                - Diskusi lanjutan tentang perbandingan teori konflik
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>
+                - Pendampingan untuk mengamati lingkungan terdekat<br>
+                - Bimbingan menyusun format observasi sederhana
+              </td>
+              <td>
+                - Membuat kliping atau portofolio konflik sosial<br>
+                - Mendokumentasikan konflik lokal secara digital
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>
+                - Memberikan contoh mind map sederhana<br>
+                - Latihan mengisi template mind map
+              </td>
+              <td>
+                - Membuat infografis konflik sosial dengan data statistik<br>
+                - Menambahkan elemen solusi jangka panjang
+              </td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>
+                - Latihan berbicara di depan kelompok kecil<br>
+                - Membantu menyusun kalimat argumentasi
+              </td>
+              <td>
+                - Mengikuti simulasi debat lanjutan<br>
+                - Menulis esai tentang solusi alternatif konflik
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Catatan pedagogis -->
+  <div class="pedagogy-note">
+    <p><i class="fas fa-lightbulb"></i> <strong>CATATAN PEDAGOGIS:</strong> Modul ini dirancang dengan pendekatan deep learning yang mengintegrasikan teknologi digital dan konteks lokal. Pembelajaran teori konflik sosial dikaitkan langsung dengan fenomena nyata di lingkungan siswa untuk meningkatkan relevansi dan pemahaman konseptual. Penggunaan HP sebagai alat pembelajaran diarahkan untuk meningkatkan keterlibatan siswa dalam observasi sosial dan dokumentasi konflik.</p>
+  </div>
+  
+  <!-- Tombol download PDF -->
+  <div class="download-section">
+    <button class="download-btn">
+      <i class="fas fa-file-pdf"></i> Download Versi PDF
+    </button>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 SMAN 1 Cluring | Modul Ajar Deep Learning Sosiologi | Hak Cipta Dilindungi</p>
+  </footer>
+
+  <script>
+    // Tab navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and contents
+          tabs.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked tab
+          tab.classList.add('active');
+          
+          // Show corresponding content
+          const tabId = tab.getAttribute('data-tab');
+          document.getElementById(`${tabId}-content`).classList.add('active');
+        });
+      });
+      
+      // Create particle effect
+      const header = document.querySelector('.header-gradient');
+      for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random size and position
+        const size = Math.random() * 10 + 5;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const opacity = Math.random() * 0.3 + 0.1;
+        const animationDuration = Math.random() * 10 + 5;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.opacity = opacity;
+        particle.style.animationDuration = `${animationDuration}s`;
+        
+        header.appendChild(particle);
+      }
+    });
+  </script>
+</body>
+</html>
