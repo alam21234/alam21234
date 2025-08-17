@@ -31,6 +31,7 @@
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -38,9 +39,33 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            transition: padding 0.3s ease;
         }
 
-        /* Header Responsive */
+        /* Mode: Handphone (default) */
+        body[data-mode="hp"] .container { padding: 0 10px; }
+        body[data-mode="hp"] .nav-links { font-size: 0.9rem; gap: 1rem; }
+        body[data-mode="hp"] .hero h2 { font-size: 2.1rem; }
+        body[data-mode="hp"] .hero p { font-size: 1rem; }
+        body[data-mode="hp"] .hero-btn { font-size: 1rem; padding: 12px 24px; }
+
+        /* Mode: Tablet */
+        body[data-mode="tablet"] .container { max-width: 900px; }
+        body[data-mode="tablet"] .hero h2 { font-size: 2.5rem; }
+        body[data-mode="tablet"] .hero p { font-size: 1.1rem; }
+        body[data-mode="tablet"] .hero-btn { font-size: 1.1rem; }
+        body[data-mode="tablet"] .nav-links { gap: 1.5rem; }
+        body[data-mode="tablet"] .modules-grid { grid-template-columns: repeat(2, 1fr); }
+
+        /* Mode: Laptop */
+        body[data-mode="laptop"] .container { max-width: 1200px; }
+        body[data-mode="laptop"] .hero h2 { font-size: 2.8rem; }
+        body[data-mode="laptop"] .hero p { font-size: 1.3rem; }
+        body[data-mode="laptop"] .hero-btn { font-size: 1.2rem; padding: 14px 32px; }
+        body[data-mode="laptop"] .nav-links { gap: 2rem; font-size: 1rem; }
+        body[data-mode="laptop"] .modules-grid { grid-template-columns: repeat(3, 1fr); }
+
+        /* Header */
         header {
             background: var(--gradient);
             color: white;
@@ -79,7 +104,6 @@
             display: flex;
             gap: 1.2rem;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .nav-links a {
@@ -96,7 +120,34 @@
             background: rgba(255,255,255,0.2);
         }
 
-        /* Hero Section (Mobile-Optimized) */
+        /* Mode Toggle */
+        .mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: white;
+            margin-left: auto;
+        }
+
+        .mode-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .mode-btn.active {
+            background: white;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Hero */
         .hero {
             padding: 5rem 1rem;
             background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
@@ -125,15 +176,15 @@
 
         .hero h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.3rem;
             margin-bottom: 1rem;
             text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+            transition: font-size 0.3s ease;
         }
 
         .hero p {
-            font-size: 1.1rem;
             margin-bottom: 1.8rem;
             opacity: 0.95;
+            transition: font-size 0.3s ease;
         }
 
         .hero-btn {
@@ -146,7 +197,6 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.05rem;
             transition: all 0.3s ease;
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
@@ -156,7 +206,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
-        /* Search Section */
+        /* Search */
         .search-section {
             padding: 1.5rem 0;
             background: white;
@@ -176,7 +226,6 @@
             border-radius: 50px;
             font-size: 1rem;
             outline: none;
-            font-family: inherit;
         }
 
         .search-box button {
@@ -190,7 +239,6 @@
             padding: 8px 14px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 1rem;
         }
 
         /* Info Section */
@@ -214,7 +262,7 @@
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
-            min-width: 140px;
+            min-width: 130px;
         }
 
         .info-item i {
@@ -231,7 +279,7 @@
             opacity: 0.9;
         }
 
-        /* Modules Section */
+        /* Modules */
         .modules {
             padding: 3rem 0;
             background: #f8fdff;
@@ -273,18 +321,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-        }
-
-        @media (min-width: 576px) {
-            .modules-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .modules-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            transition: grid-template-columns 0.3s ease;
         }
 
         .module-card {
@@ -317,10 +354,6 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
-        }
-
-        .module-card:hover .card-img img {
-            transform: scale(1.08);
         }
 
         .card-content {
@@ -385,7 +418,6 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(67, 97, 238, 0.4);
         }
 
         .btn-pdf {
@@ -399,7 +431,7 @@
             transform: translateY(-1px);
         }
 
-        /* About Section */
+        /* About */
         .about {
             padding: 3rem 0;
         }
@@ -422,12 +454,6 @@
             font-size: 1.6rem;
             color: var(--primary);
             margin-bottom: 1rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            line-height: 1.7;
         }
 
         .about-image {
@@ -479,10 +505,6 @@
             background: var(--accent);
         }
 
-        .footer-links {
-            list-style: none;
-        }
-
         .footer-links li {
             margin-bottom: 0.7rem;
         }
@@ -490,7 +512,6 @@
         .footer-links a {
             color: #ddd;
             text-decoration: none;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -534,7 +555,7 @@
             color: #aaa;
         }
 
-        /* Back to Home Button (Mobile Friendly) */
+        /* Back to Home */
         .back-home {
             display: inline-flex;
             align-items: center;
@@ -575,27 +596,27 @@
         .delay-5 { animation-delay: 0.5s; }
         .delay-6 { animation-delay: 0.6s; }
 
-        /* Tablet & Large Phone Optimized */
-        @media (min-width: 768px) {
-            .hero h2 { font-size: 2.8rem; }
-            .hero p { font-size: 1.2rem; }
-            .hero-btn { font-size: 1.1rem; padding: 14px 32px; }
-            .section-title h2 { font-size: 2.2rem; }
-            .info-item h3 { font-size: 1.3rem; }
-            .info-item p { font-size: 1.1rem; }
-            .card-content h3 { font-size: 1.3rem; }
-            .btn { font-size: 0.95rem; }
-            .back-home { font-size: 1rem; padding: 14px 28px; }
+        /* Responsif Tambahan */
+        @media (max-width: 480px) {
+            .mode-toggle { margin-left: auto; }
+            .mode-btn { padding: 5px 8px; font-size: 0.8rem; }
+            .hero h2 { font-size: 1.9rem; }
+            .section-title h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
+<body data-mode="hp">
+    <!-- Header dengan Mode Toggle -->
     <header>
         <div class="container header-content">
             <div class="logo">
                 <i class="fas fa-book-open"></i>
                 <h1>Sosiologi X</h1>
+            </div>
+            <div class="mode-toggle">
+                <button class="mode-btn" data-mode="hp" title="Handphone"><i class="fas fa-mobile-alt"></i> HP</button>
+                <button class="mode-btn" data-mode="tablet" title="Tablet"><i class="fas fa-tablet-alt"></i> Tablet</button>
+                <button class="mode-btn" data-mode="laptop" title="Laptop"><i class="fas fa-laptop"></i> Laptop</button>
             </div>
             <nav class="nav-links">
                 <a href="#"><i class="fas fa-home"></i> Beranda</a>
@@ -831,9 +852,35 @@
     </a>
 
     <script>
+        // Mode Tampilan
+        const modeButtons = document.querySelectorAll('.mode-btn');
+        const body = document.body;
+
+        // Muat mode dari localStorage
+        const savedMode = localStorage.getItem('viewMode') || 'hp';
+        body.setAttribute('data-mode', savedMode);
+
+        // Tandai tombol aktif
+        function setActiveMode() {
+            modeButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.mode === body.getAttribute('data-mode'));
+            });
+        }
+
+        setActiveMode();
+
+        // Ganti mode
+        modeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const mode = btn.dataset.mode;
+                body.setAttribute('data-mode', mode);
+                localStorage.setItem('viewMode', mode);
+                setActiveMode();
+            });
+        });
+
         // Visitor Counter
-        let count = localStorage.getItem('visitorCount') || 0;
-        count = parseInt(count) + 1;
+        const count = (localStorage.getItem('visitorCount') || 0) + 1;
         localStorage.setItem('visitorCount', count);
         document.getElementById('visitorCounter').textContent = count.toLocaleString();
 
