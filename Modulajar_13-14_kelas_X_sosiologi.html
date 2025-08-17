@@ -350,6 +350,52 @@
         overflow-x: auto;
       }
     }
+
+    /* --- TAMBAHAN: Tombol Kembali ke Halaman Muka --- */
+    .back-home-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .back-home-btn a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .back-home-btn a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+    }
+
+    .back-home-btn a i {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .back-home-btn {
+        left: 15px;
+        bottom: 15px;
+      }
+      .back-home-btn a {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+      }
+    }
+    /* --- Akhir Tambahan --- */
   </style>
 </head>
 <body>
@@ -906,6 +952,13 @@
   <footer>
     <p>© 2025 SMAN 1 Cluring | Modul Ajar Deep Learning Sosiologi | Hak Cipta Dilindungi</p>
   </footer>
+
+  <!-- Tombol Kembali ke Halaman Muka -->
+  <div class="back-home-btn">
+    <a href="index.html" aria-label="Kembali ke Halaman Muka">
+      <i class="fas fa-home"></i> Kembali ke Beranda
+    </a>
+  </div>
 
   <script>
     // Tab navigation
